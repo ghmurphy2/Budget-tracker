@@ -31,12 +31,11 @@ Project is created with:
 Download the repository
 ​
 - Copy the repo
-- In your terminal, cd to the CRM folder directory, `$npm i`
-- To run on browser: `npm start`
-- You can also use the heroku-link for a demo:
-- Deployed link: 
+- Install dependencies
+- Run locally with node server.js in root folder or deploy with a linked MongoDB server
+- You can also follow the deployed link below: 
 - https://gentle-shelf-43428.herokuapp.com/
-​e 
+​
 ​
 ​
 ## Routing-Explained

@@ -2,7 +2,7 @@ const { json } = require("express");
 
 // create budget db
 let db;
-const request = indexeddb.open("budget, 1")
+const request = indexeddb.open("budget", 1)
 // create offline waiting cache
 request.onupgradeneeded = function (e){
     const db = e.target.result;

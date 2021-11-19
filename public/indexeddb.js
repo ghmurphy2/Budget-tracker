@@ -4,7 +4,7 @@ const request = indexedDB.open("budget", 1)
 // create offline waiting cache
 request.onupgradeneeded = function (e){
     const db = e.target.result;
-    db.createObjectStoe("waiting", {autoIncrement: true});
+    db.createObjectStore("waiting", {autoIncrement: true});
 };
 // check online first
 request.onsuccess = function (e){

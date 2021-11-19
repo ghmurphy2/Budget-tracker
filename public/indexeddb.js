@@ -20,16 +20,16 @@ request.onerror = function (e){
     console.log("Error")
 }
 
-function savePending(rec){
+function saveRecord(rec){
 
-    const changeBudget = db.changeBudget(['waiting'], 'readwrite');
-    const store = changeBudget.objectStore('waiting');
+    const transaction = db.transaction(['waiting'], 'readwrite');
+    const store = transaction.objectStore('waiting');
     store.add(rec)
 }
 
-function checkDb(){
-    const changeBudget = db.changeBudget(['waiting'], 'readwrite');
-    const store = changeBudget.objectStore('waiting');
+function checkDatabase(){
+    const transaction = db.transaction(['waiting'], 'readwrite');
+    const store = transaction.objectStore('waiting');
     const getAll = store.getAll();
 
     getAll.onsuccess = function (){
@@ -44,8 +44,8 @@ function checkDb(){
             })
             .then (response => response/json())
             .then(() => {
-                const changeBudget = db.changeBudget(['waiting'], 'readwrite');
-                const store = changeBudget.objectStore('waiting');
+                const transaction = db.transaction(['waiting'], 'readwrite');
+                const store = transaction.objectStore('waiting');
                 store.clear()
             });
 
@@ -53,4 +53,4 @@ function checkDb(){
 }
 }
 
-window.addEventListener('online', checkDb)
+window.addEventListener('online', checkDatabase)
